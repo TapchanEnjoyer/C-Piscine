@@ -1,20 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_div_mod.c                                       :+:      :+:    :+:   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: niel <niel@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/08 00:48:23 by dprikhod          #+#    #+#             */
-/*   Updated: 2025/02/08 03:20:34 by niel             ###   ########.fr       */
+/*   Created: 2025/02/08 04:31:20 by niel              #+#    #+#             */
+/*   Updated: 2025/02/08 12:46:15 by niel             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	ft_div_mod(int a, int b, int *div, int *mod)
+int	ft_strlen(char *str)
 {
-	if (b != 0)
+	int	counter;
+
+	counter = 0;
+	while (*str != '\0')
 	{
-		*div = a / b;
-		*mod = a % b;
+		counter++;
+		str++;
 	}
+	return (counter);
 }

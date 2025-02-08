@@ -1,20 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_div_mod.c                                       :+:      :+:    :+:   */
+/*   ft_ultimate_div_mod.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: niel <niel@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/08 00:48:23 by dprikhod          #+#    #+#             */
-/*   Updated: 2025/02/08 03:20:34 by niel             ###   ########.fr       */
+/*   Created: 2025/02/08 03:53:51 by niel              #+#    #+#             */
+/*   Updated: 2025/02/08 04:21:23 by niel             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	ft_div_mod(int a, int b, int *div, int *mod)
+void	ft_ultimate_div_mod(int *a, int *b)
 {
+	int	div;
+	int	rev;
+
 	if (b != 0)
 	{
-		*div = a / b;
-		*mod = a % b;
+		div = *a / *b;
+		rev = *a % *b;
+		*a = div;
+		*b = rev;
 	}
 }

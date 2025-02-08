@@ -1,20 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_div_mod.c                                       :+:      :+:    :+:   */
+/*   ft_putstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: niel <niel@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/08 00:48:23 by dprikhod          #+#    #+#             */
-/*   Updated: 2025/02/08 03:20:34 by niel             ###   ########.fr       */
+/*   Created: 2025/02/08 04:06:32 by niel              #+#    #+#             */
+/*   Updated: 2025/02/08 04:30:18 by niel             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	ft_div_mod(int a, int b, int *div, int *mod)
+#include <unistd.h>
+
+void	ft_putstr(char *str)
 {
-	if (b != 0)
+	while (*str != '\0')
 	{
-		*div = a / b;
-		*mod = a % b;
+		write(1, str, 1);
+		str++;
 	}
 }
+
+/*int	main(void)
+{
+	char	str[]= "Cake is a Lie!";
+	char	*ptr;
+
+	ptr = str;
+	ft_putstr(ptr);
+	return (0);
+}
+*/
