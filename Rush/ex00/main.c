@@ -1,45 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_rev_int_tab.c                                   :+:      :+:    :+:   */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dprikhod <dprikhod@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/08 12:50:04 by niel              #+#    #+#             */
-/*   Updated: 2025/02/08 15:52:44 by dprikhod         ###   ########.fr       */
+/*   Created: 2025/02/08 03:19:19 by niel              #+#    #+#             */
+/*   Updated: 2025/02/08 18:46:08 by dprikhod         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	ft_rev_int_tab(int *tab, int size)
-{
-	int	buf;
-	int	pos;
+void	ft_putchar(char c);
 
-	pos = 1;
-	while (pos <= (size / 2))
-	{
-		buf = *tab;
-		*tab = *(tab + (size - pos));
-		tab = tab + (size - pos);
-		*tab = buf;
-		tab = tab - (size - pos);
-		pos++;
-		tab++;
-	}
-}
-
-/*#include <stdio.h>
+void	rush(int arr1, int arr2);
 
 int	main(void)
 {
-	int	array[] = {2, 5, 6};
-	int	size = 3;
-
-	ft_rev_int_tab(array, size);
-	for (int i = 0; i < size; i++)
-	{
-		printf("%d \n", array[i]);
-	}
+	rush(5, 3);
+	ft_putchar('\n');
+	rush(5, 1);
+	ft_putchar('\n');
+	rush(1, 1);
+	ft_putchar('\n');
+	rush(1, 5);
+	ft_putchar('\n');
+	rush(4, 4);
+	ft_putchar('\n');
 	return (0);
 }
-*/
