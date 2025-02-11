@@ -6,26 +6,45 @@
 /*   By: dprikhod <dprikhod@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/11 13:43:26 by dprikhod          #+#    #+#             */
-/*   Updated: 2025/02/11 13:52:35 by dprikhod         ###   ########.fr       */
+/*   Updated: 2025/02/11 14:42:02 by dprikhod         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+int	ft_condition(char *str)
+{
+	int	in_word;
+
+	if (*str < 48 || (*str > 57 && *str < 65)
+		|| (*str > 90 && *str < 97) || *str > 122)
+	{
+		in_word = 0;
+	}
+	else
+	{
+		in_word = 1;
+	}
+	return (in_word);
+}
+
 char	*ft_strcapitalize(char *str)
 {
-	int	first;
+	int		in_word;
+	char	*original_str;
 
-	first = 0;
-	while (*str != '\n')
+	original_str = str;
+	in_word = 0;
+	while (*str != '\0')
 	{
-		if (first == 0 && *str > 64 && *str < 91)
+		if (in_word == 1 && *str > 64 && *str < 91)
 		{
 			*str = *str + 32;
 		}
-		else if (first == 1 && *str > 96 && *str < 123)
+		else if (in_word == 0 && *str > 96 && *str < 123)
 		{
 			*str = *str - 32;
-			first = 0;
 		}
+		in_word = ft_condition(str);
 		str++;
 	}
+	return (original_str);
 }

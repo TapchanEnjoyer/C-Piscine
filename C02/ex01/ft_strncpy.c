@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strncpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: niel <niel@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: dprikhod <dprikhod@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/11 01:01:57 by niel              #+#    #+#             */
-/*   Updated: 2025/02/11 02:38:41 by niel             ###   ########.fr       */
+/*   Updated: 2025/02/11 14:18:10 by dprikhod         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ between the two functions*/
 char	*ft_strncpy(char *dest, char *src, unsigned int n)
 {
 	unsigned int	pos;
-	char	*original_dest;
+	char			*original_dest;
 
 	pos = 0;
 	original_dest = dest;
