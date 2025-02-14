@@ -6,7 +6,7 @@
 /*   By: niel <niel@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/14 00:43:04 by niel              #+#    #+#             */
-/*   Updated: 2025/02/14 01:12:37 by niel             ###   ########.fr       */
+/*   Updated: 2025/02/14 01:30:01 by niel             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ char	*ft_strcat(char *dest, char *src)
 
 	original_dest = dest;
 	dest += ft_strlen(dest);
-	ft_strcpy(dest, src );
+	ft_strcpy(dest, src);
 	return (original_dest);
 }
 
