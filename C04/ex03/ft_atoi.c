@@ -6,9 +6,11 @@
 /*   By: dprikhod <dprikhod@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/14 18:19:40 by niel              #+#    #+#             */
-/*   Updated: 2025/02/14 18:57:42 by dprikhod         ###   ########.fr       */
+/*   Updated: 2025/02/14 19:40:09 by dprikhod         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include <stdio.h>
 
 int	ft_iterative_power(int nb, int power)
 {
@@ -34,7 +36,7 @@ int	ft_strlen(char *str)
 	int	n;
 
 	n = 0;
-	while (*str != '\0')
+	while ((*str > 47 && *str < 58))
 	{
 		n++;
 		str++;
@@ -44,10 +46,37 @@ int	ft_strlen(char *str)
 
 int	ft_atoi(char *str)
 {
+	int	neg;
+	int	res;
+	int	i;
+	int	size;
 
+	i = 0;
+	while (*str == '-' || *str == '+' || *str == ' ')
+	{
+		if (*str == '-')
+			neg = 1;
+		str++;
+	}
+	size = ft_strlen(str);
+	res = 0;
+	while (i < size)
+	{
+		res += (str[i] - 48) * ft_iterative_power(10, size - i - 1);
+		i++;
+	}
+	if (neg == 1)
+		res *= -1;
+	return (res);
 }
 
-int	main(void)
-{
-	
-}
+// int	main(void)
+// {
+// 	char	str[] = "---++-+---14";
+// 	int		res;
+// 	char	*ptr = str;
+
+// 	res = ft_atoi(ptr);
+// 	printf("%d\n", res);
+// 	return (0);
+// }
