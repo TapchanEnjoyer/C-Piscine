@@ -6,7 +6,7 @@
 /*   By: dprikhod <dprikhod@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/14 18:19:40 by niel              #+#    #+#             */
-/*   Updated: 2025/02/15 21:53:35 by dprikhod         ###   ########.fr       */
+/*   Updated: 2025/02/15 21:56:18 by dprikhod         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,11 +50,10 @@ int	ft_isspace(char *str)
 
 	c = *str;
 	if ((c >= 9 && c <= 13) || c == ' ')
-		return 1;
+		return (1);
 	else
-		return 0;
+		return (0);
 }
-
 
 int	ft_atoi(char *str)
 {
@@ -73,15 +72,12 @@ int	ft_atoi(char *str)
 			neg *= -1;
 		str++;
 	}
-	//printf("%d\n", neg);
 	size = ft_strlen(str);
 	res = 0;
 	while (i < size)
 	{
-		//printf("%d\n", (str[i] - 48) * ft_iterative_power(10, size - i - 1));
 		res = res + (str[i] - '0') * ft_iterative_power(10, size - i - 1);
 		i++;
-		//printf("%d\n", res);
 	}
 	res *= neg;
 	return (res);
