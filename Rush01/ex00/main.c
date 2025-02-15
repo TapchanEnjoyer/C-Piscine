@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dprikhod <dprikhod@student.42.fr>          +#+  +:+       +#+        */
+/*   By: niel <niel@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/15 14:43:49 by dprikhod          #+#    #+#             */
-/*   Updated: 2025/02/15 22:56:22 by dprikhod         ###   ########.fr       */
+/*   Updated: 2025/02/15 23:40:35 by niel             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 #include <stdlib.h>	//for malloc and free
 #include <stdio.h>
 
-int		matrix[4][4];
+int		g_matrix[4][4];
 
 int	ft_strlen(char *str)
 {
@@ -31,8 +31,9 @@ int	ft_strlen(char *str)
 
 void	ft_print_grid(int grid[4][4])
 {
-	int	row;
-	int	col;
+	int		row;
+	int		col;
+	char	c;
 
 	row = 0;
 	col = 0;
@@ -40,7 +41,7 @@ void	ft_print_grid(int grid[4][4])
 	{
 		while (col < 4)
 		{
-			char c = grid[row][col] + '0';
+			c = grid[row][col] + '0';
 			write(1, &c, 1);
 			write(1, " ", 1);
 			col++;
@@ -60,7 +61,7 @@ void	ft_print_grid(int grid[4][4])
 // 	}
 // }
 
-void	ft_char_to_matrix(char *str, int matrix[4][4])
+void	ft_char_to_matrix(char *str)
 {
 	int	row;
 	int	col;
@@ -73,7 +74,7 @@ void	ft_char_to_matrix(char *str, int matrix[4][4])
 	size = ft_strlen(str);
 	while (i < size)
 	{
-		matrix[row][col] = str[i] - '0';
+		g_matrix[row][col] = str[i] - '0';
 		col++;
 		if (col == 4)
 		{
@@ -82,13 +83,13 @@ void	ft_char_to_matrix(char *str, int matrix[4][4])
 		}
 		i += 2;
 	}
-	}
+}
 
-int	ft_input_handler(int argc, char *argv[], int matrix[4][4])
+int	ft_input_handler(int argc, char *argv[])
 {
 	int		size;
 	int		i;
-	char	*str; 
+	char	*str;
 	int		ret;
 
 	if (argc != 2)
@@ -106,19 +107,16 @@ int	ft_input_handler(int argc, char *argv[], int matrix[4][4])
 		i++;
 	}
 	if (ret == 1)
-	{
 		write(1, "Error!\n", 7);
-		return 1;
-	}
-	ft_char_to_matrix(str, matrix);
-	return 0;
+	else
+		ft_char_to_matrix(str);
+	return (ret);
 }
-
 
 int	main(int argc, char *argv[])
 {
-	if (ft_input_handler(argc, argv, matrix))
-		return 1;
-	ft_print_grid(matrix);
-	return 0;
+	if (ft_input_handler(argc, argv))
+		return (1);
+	ft_print_grid(g_matrix);
+	return (0);
 }
