@@ -6,7 +6,7 @@
 /*   By: dprikhod <dprikhod@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/14 18:19:40 by niel              #+#    #+#             */
-/*   Updated: 2025/02/14 19:57:28 by dprikhod         ###   ########.fr       */
+/*   Updated: 2025/02/15 17:39:25 by dprikhod         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ int	ft_strlen(char *str)
 	int	n;
 
 	n = 0;
-	while ((*str > 47 && *str < 58))
+	while ((*str >= '0' && *str <= '9'))
 	{
 		n++;
 		str++;
@@ -53,30 +53,35 @@ int	ft_atoi(char *str)
 
 	neg = 1;
 	i = 0;
-	while (*str == '-' || *str == '+' || *str == ' ')
+	while ()
+		str++;
+	while (*str == '-' || *str == '+')
 	{
 		if (*str == '-')
 			neg *= -1;
 		str++;
 	}
+	//printf("%d\n", neg);
 	size = ft_strlen(str);
 	res = 0;
 	while (i < size)
 	{
-		res += (str[i] - 48) * ft_iterative_power(10, size - i - 1);
+		//printf("%d\n", (str[i] - 48) * ft_iterative_power(10, size - i - 1));
+		res = res + (str[i] - '0') * ft_iterative_power(10, size - i - 1);
 		i++;
+		//printf("%d\n", res);
 	}
 	res *= neg;
 	return (res);
 }
 
-// int	main(void)
-// {
-// 	char	str[] = "+ + +14";
-// 	int		res;
-// 	char	*ptr = str;
+int	main(void)
+{
+	char	str[] = "--2147483647";
+	int		res;
+	char	*ptr = str;
 
-// 	res = ft_atoi(ptr);
-// 	printf("%d\n", res);
-// 	return (0);
-// }
+	res = ft_atoi(ptr);
+	printf("%d\n", res);
+	return (0);
+}
