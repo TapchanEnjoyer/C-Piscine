@@ -6,7 +6,7 @@
 /*   By: dprikhod <dprikhod@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/14 18:19:40 by niel              #+#    #+#             */
-/*   Updated: 2025/02/15 17:39:25 by dprikhod         ###   ########.fr       */
+/*   Updated: 2025/02/15 21:53:35 by dprikhod         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,18 @@ int	ft_strlen(char *str)
 	return (n);
 }
 
+int	ft_isspace(char *str)
+{
+	char	c;
+
+	c = *str;
+	if ((c >= 9 && c <= 13) || c == ' ')
+		return 1;
+	else
+		return 0;
+}
+
+
 int	ft_atoi(char *str)
 {
 	int		neg;
@@ -53,7 +65,7 @@ int	ft_atoi(char *str)
 
 	neg = 1;
 	i = 0;
-	while ()
+	while (ft_isspace(str) == 1)
 		str++;
 	while (*str == '-' || *str == '+')
 	{
@@ -75,13 +87,13 @@ int	ft_atoi(char *str)
 	return (res);
 }
 
-int	main(void)
-{
-	char	str[] = "--2147483647";
-	int		res;
-	char	*ptr = str;
+// int	main(void)
+// {
+// 	char	str[] = "  \n\v\r\t\f  --2147483647";
+// 	int		res;
+// 	char	*ptr = str;
 
-	res = ft_atoi(ptr);
-	printf("%d\n", res);
-	return (0);
-}
+// 	res = ft_atoi(ptr);
+// 	printf("%d\n", res);
+// 	return (0);
+// }
