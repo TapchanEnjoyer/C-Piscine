@@ -6,7 +6,7 @@
 /*   By: niel <niel@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/15 16:12:52 by dprikhod          #+#    #+#             */
-/*   Updated: 2025/02/16 05:19:28 by niel             ###   ########.fr       */
+/*   Updated: 2025/02/16 05:37:32 by niel             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,7 @@ int	ft_fill_row(int type, int place)
 	return (0);
 }
 
-int	ft_first_num(void)
+int	check_input(void)
 {
 	int	type;
 	int	place;

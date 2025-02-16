@@ -6,7 +6,7 @@
 /*   By: niel <niel@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/15 14:43:49 by dprikhod          #+#    #+#             */
-/*   Updated: 2025/02/16 05:06:29 by niel             ###   ########.fr       */
+/*   Updated: 2025/02/16 05:37:32 by niel             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ void	ft_print_grid(int grid[4][4])
 	}
 }
 
-int	ft_first_num(void);
+int	check_input(void);
 
 int	ft_input_handler(int argc, char *argv[]);
 
@@ -50,7 +50,7 @@ int	main(int argc, char *argv[])
 {
 	if (ft_input_handler(argc, argv))
 		return (1);
-	ft_first_num();
+	check_input();
 	if (solve_sudoku(0, 0))
 		ft_print_grid(g_out);
 	else
