@@ -3,15 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   prepare_input.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: niel <niel@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: dprikhod <dprikhod@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/16 02:59:23 by niel              #+#    #+#             */
-/*   Updated: 2025/02/16 03:41:12 by niel             ###   ########.fr       */
+/*   Updated: 2025/02/16 13:31:47 by dprikhod         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 #include "globals.h"
+#include <stdio.h>
 
 int	ft_strlen(char *str)
 {
@@ -57,6 +58,7 @@ int	ft_input_handler(int argc, char *argv[])
 	char	*str;
 	int		ret;
 
+	ret = 0;
 	if (argc != 2)
 		ret = 1;
 	str = argv[1];
@@ -64,7 +66,7 @@ int	ft_input_handler(int argc, char *argv[])
 	if (size != 31)
 		ret = 1;
 	i = 0;
-	while (str[i] < size)
+	while (str[i] != '\0')
 	{
 		if (((i % 2 == 0) && !(*str >= '0' && *str <= '4'))
 			|| ((i % 2 == 1) && !(*str != ' ')))

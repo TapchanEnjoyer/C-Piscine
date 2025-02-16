@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   solve_sudoku.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: niel <niel@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: dprikhod <dprikhod@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/16 04:32:16 by niel              #+#    #+#             */
-/*   Updated: 2025/02/16 05:07:19 by niel             ###   ########.fr       */
+/*   Updated: 2025/02/16 13:57:46 by dprikhod         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ int	is_valid(int row, int col, int num)
 		if (g_out[row][x] == num || g_out[x][col] == num)
 			return (0);
 		x++;
+		//check_line(row, x) && check_line(x, col)
 	}
 	return (1);
 }

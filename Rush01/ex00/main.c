@@ -3,16 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: niel <niel@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: dprikhod <dprikhod@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/15 14:43:49 by dprikhod          #+#    #+#             */
-/*   Updated: 2025/02/16 05:37:32 by niel             ###   ########.fr       */
+/*   Updated: 2025/02/16 13:33:34 by dprikhod         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 #include <stdlib.h> //for malloc and free
 #include "globals.h"
+#include <stdio.h>
 
 int	g_out[4][4] = {0};
 int	g_input[4][4];
