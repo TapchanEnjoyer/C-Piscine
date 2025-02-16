@@ -6,11 +6,28 @@
 /*   By: niel <niel@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/15 14:43:49 by dprikhod          #+#    #+#             */
-/*   Updated: 2025/02/15 23:27:37 by niel             ###   ########.fr       */
+/*   Updated: 2025/02/16 05:21:53 by niel             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	check_line(int size, int *line) // return number of visible buildings
+#include "globals.h"
+
+void	ft_rev_int_tab(int *tab, int size)
+{
+	int	i;
+	int	temp;
+
+	i = 0;
+	while (i < size / 2)
+	{
+		temp = tab[i];
+		tab[i] = tab[size - 1 - i];
+		tab[size -1 - i] = temp;
+		i++;
+	}
+}
+
+int	check_line(int size, int *line)
 {
 	int	i;
 	int	ctnmb;
@@ -30,6 +47,12 @@ int	check_line(int size, int *line) // return number of visible buildings
 	}
 	return (buildings);
 }
+
+int	compare(void)
+{
+	
+}
+
 /*
 #include <stdio.h>
 

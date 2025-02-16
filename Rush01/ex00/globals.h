@@ -1,18 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_fill.c                                          :+:      :+:    :+:   */
+/*   globals.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dprikhod <dprikhod@student.42.fr>          +#+  +:+       +#+        */
+/*   By: niel <niel@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/15 16:12:52 by dprikhod          #+#    #+#             */
-/*   Updated: 2025/02/15 18:00:18 by dprikhod         ###   ########.fr       */
+/*   Created: 2025/02/16 03:53:34 by niel              #+#    #+#             */
+/*   Updated: 2025/02/16 03:53:56 by niel             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-// #include <stdio.h>
+#ifndef GLOBALS_H
+# define GLOBALS_H
 
-// int ft_fill(int str)
-// {
+extern int	g_out[4][4];
+extern int	g_input[4][4];
 
-// }
+#endif
