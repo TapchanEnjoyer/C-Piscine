@@ -6,11 +6,12 @@
 /*   By: niel <niel@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/15 14:43:49 by dprikhod          #+#    #+#             */
-/*   Updated: 2025/02/16 05:59:21 by niel             ###   ########.fr       */
+/*   Updated: 2025/02/16 12:16:27 by niel             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "globals.h"
+#include <stdlib.h>
 
 #define SIZE 4
 
@@ -19,6 +20,7 @@ int	*ft_row2arr(int row)
 	int	*arr;
 	int	col;
 
+	col = 0;
 	arr = (int *)malloc(SIZE * sizeof(int));
 	while (col < SIZE)
 	{
@@ -72,27 +74,16 @@ int	compare(void)
 
 	type = 0;
 	place = 0;
-	while (type < 4)
-	{
-		arr = ft_row2arr(type);
-		if (type == 1 || type == 3)
-			ft_rev_int_tab(arr);
-		if (check_line(arr));
-			return (1);
-		type++;
-	}
+
+	while (place < 4)
+	// while (type < 4)
+	// {
+	// 	arr = ft_row2arr(type);
+	// 	if (type == 1 || type == 3)
+	// 		ft_rev_int_tab(arr);
+	// 	if (check_line(arr));
+	// 		return (1);
+	// 	type++;
+	// }
 	return (0);
 }
-
-/*
-#include <stdio.h>
-
-int	main(void)
-{
-	int	line[] = {4, 1, 2, 3};
-	int	result = 0;
-	result = check_line(4, line);
-	printf("Number of visible buildings is: %d\n", result);
-	return (0);
-}
-*/
