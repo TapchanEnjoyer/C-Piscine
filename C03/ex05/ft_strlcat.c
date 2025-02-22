@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strlcat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dprikhod <dprikhod@student.42.fr>          +#+  +:+       +#+        */
+/*   By: niel <niel@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/19 20:10:44 by dprikhod          #+#    #+#             */
-/*   Updated: 2025/02/19 21:16:47 by dprikhod         ###   ########.fr       */
+/*   Updated: 2025/02/22 00:14:29 by niel             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,30 +29,35 @@ int	ft_strlen(char *str)
 
 unsigned int	ft_strlcat(char *dest, char *src, unsigned int size)
 {
-	unsigned int	j;
+	unsigned int	dest_size;
 	unsigned int	i;
-	unsigned int	s_s;
 
-	i = ft_strlen(dest);
-	s_s = i + ft_strlen(src);
-	j = 0;
-	while (i < size && src[j] != '\0')
+	dest_size = ft_strlen(dest);
+	if (size <= dest_size)
+		return (size + dest_size);
+	else if (size > dest_size)
 	{
-		dest[i] = src[j];
-		i++;
-		j++;
+		i = dest_size;
+		while (i < size - 1)
+		{
+			dest[i] = src[i - dest_size];
+			i++;
+		}
+		dest[i] = '\0';
+		return (dest_size + ft_strlen(src));
 	}
-	dest[i] = '\0';
-	return (s_s);
+	return (0);
 }
 
 // int	main(void)
 // {
-// 	char			str1[] = "Hello";
-// 	char		str2[] = "world";
-// 	unsigned int	n = 8;
+// 	char			str1[17] = "Hello world";
+// 	char			str2[] = "world";
+// 	unsigned int	n = 13;
 
 // 	printf("%d\n", ft_strlcat(str1, str2, n));
-// 	// printf("%zu\n", strlcat(str1, str2, n));
+// 	// printf("%d\n", strlcat(str1, str2, n));
+// 	// printf("%d\n", ft_strlen(str1));
+// 	printf("%s\n", str1);
 // 	return (0);
 // }
