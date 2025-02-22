@@ -1,27 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_putnbr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: niel <niel@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/08 03:19:19 by niel              #+#    #+#             */
-/*   Updated: 2025/02/08 03:22:01 by niel             ###   ########.fr       */
+/*   Created: 2025/02/14 01:32:23 by niel              #+#    #+#             */
+/*   Updated: 2025/02/14 01:55:53 by niel             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
+#include <unistd.h>
 
-void	ft_div_mod(int a, int b, int *div, int *mod);
-
-int	main(void)
+void	ft_putnbr(int nb)
 {
-	int	a;
-	int	b;
+	char	c;
+	long	nb1;
 
-	a = 12;
-	b = 5;
-	ft_div_mod(a, b, &a, &b);
-	printf("%d, %d\n", a, b);
-	return (0);
+	nb1 = nb;
+	if (nb1 < 0)
+	{
+		write(1, "-", 1);
+		nb1 = -nb1;
+	}
+	if (nb1 >= 10)
+		ft_putnbr(nb1 / 10);
+	c = '0' + nb1 % 10;
+	write(1, &c, 1);
 }
+
+// int	main(void)
+// {
+// 	int	nb = -2147483647;
+// 	ft_putnbr(nb);
+// 	write(1,"\n",1);
+// 	return (0);
+// }

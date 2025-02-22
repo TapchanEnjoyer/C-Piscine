@@ -1,53 +1,57 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_range.c                                         :+:      :+:    :+:   */
+/*   ft_sort_int_tab.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: niel <niel@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/21 18:29:58 by dprikhod          #+#    #+#             */
-/*   Updated: 2025/02/22 01:41:17 by niel             ###   ########.fr       */
+/*   Created: 2025/02/22 01:14:30 by niel              #+#    #+#             */
+/*   Updated: 2025/02/22 01:40:55 by niel             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
-
-int	*ft_range(int min, int max)
+void	ft_sort_int_tab(int *tab, int size)
 {
-	int	size;
-	int	*ar;
 	int	i;
+	int	j;
+	int	key;
 
-	if (max <= min)
-		return (NULL);
-	size = max - min;
-	ar = malloc(size * sizeof(int));
-	if (!ar)
-		return (NULL);
-	i = 0;
+	i = 1;
 	while (i < size)
 	{
-		ar[i] = min + i;
+		key = tab[i];
+		j = i - 1;
+		while (j >= 0 && key < tab[j])
+		{
+			tab[j + 1] = tab[j];
+			j--;
+		}
+		tab[j + 1] = key;
 		i++;
 	}
-	return (&ar[0]);
 }
 
 // #include <stdio.h>
 
-// int main(void)
+// void	print_array(int *arr, int size)
 // {
-// 	int *ar;
-// 	int i = 0;
-// 	int min = 5;
-// 	int max = 15;
-// 	int size = max - min;
+// 	int i;
 
-// 	ar = ft_range(min, max);
+// 	i = 0;
 // 	while (i < size)
 // 	{
-// 		printf("%d\n", ar[i]);
+// 		printf("%d ", arr[i]);
 // 		i++;
 // 	}
+// 	printf("\n");
+// }
+
+// int	main(void)
+// {
+// 	int	arr[] = {9, 34, 2, 123, 5, 1, 3};
+// 	int	size = sizeof(arr) / sizeof(arr[0]);
+// 	printf("%d\n", size);
+// 	ft_sort_int_tab(arr, size);
+// 	print_array(arr, size);
 // 	return (0);
 // }
