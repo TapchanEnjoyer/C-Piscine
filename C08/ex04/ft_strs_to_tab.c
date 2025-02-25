@@ -1,15 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strjoin.c                                       :+:      :+:    :+:   */
+/*   ft_strs_to_tab.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: niel <niel@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/22 02:03:15 by niel              #+#    #+#             */
-/*   Updated: 2025/02/23 04:32:32 by niel             ###   ########.fr       */
+/*   Created: 2025/02/20 12:30:08 by niel              #+#    #+#             */
+/*   Updated: 2025/02/24 01:50:03 by niel             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "ft_stock_str.h"
 #include <stdlib.h>
 #include <unistd.h>
 
@@ -41,52 +42,33 @@ char	*ft_strcpy(char *dest, char *src)
 	return (original_dest);
 }
 
-char	*ft_strcat(char *dest, char *src)
+struct s_stock_str	*ft_strs_to_tab(int ac, char **av)
 {
-	char	*original_dest;
+	struct s_stock_str	*s_s;
+	int	i;
 
-	original_dest = dest;
-	dest += ft_strlen(dest);
-	ft_strcpy(dest, src);
-	return (original_dest);
-}
-
-char	*ft_strjoin(int size, char **strs, char *sep)
-{
-	char	*str;
-	int		len;
-	int		i;
-
+	if (ac <=0)
+		return (NULL);
+	s_s = malloc(ac * sizeof(struct s_stock_str));
 	i = 0;
-	len = 0;
-	while (i < size)
+	while (i < ac)
 	{
-		len += ft_strlen(strs[i]);
+		s_s[i].size = ft_strlen(av[i]);
+		s_s[i].str = malloc((s_s[i].size + 1) * sizeof(char));
+		s_s[i].copy = malloc((s_s[i].size + 1) * sizeof(char));
+		ft_strcpy(s_s[i].str, av[i]);
+		ft_strcpy(s_s[i].copy, av[i]);
 		i++;
 	}
-	str = malloc(len * sizeof(char));
-	if (size == 0)
-		return (str);
-	ft_strcpy(str, strs[0]);
-	i = 1;
-	while (i < size)
-	{
-		ft_strcat(str, sep);
-		ft_strcat(str, strs[i]);
-		i++;
-	}
-	return (str);
+	s_s[i].str = NULL;
+	return (s_s);
 }
 
 // int	main(void)
 // {
-// 	char	*strs[] = {"Hello", "world"};
-// 	char	sep[] = "-";
-// 	int		size = 2;
-// 	char	*res;
+// 	char	*av[] = {"Hello", "world"};
+// 	int		ac = 2;
 
-// 	res = ft_strjoin(size, strs, sep);
-// 	write(1, res, ft_strlen(res));
-// 	free(res);
+// 	ft_show_tab(ft_strs_to_tab(ac, av));
 // 	return (0);
 // }

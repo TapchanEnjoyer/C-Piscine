@@ -1,18 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_abs.h                                           :+:      :+:    :+:   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: niel <niel@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/20 12:21:42 by niel              #+#    #+#             */
-/*   Updated: 2025/02/24 01:42:26 by niel             ###   ########.fr       */
+/*   Created: 2025/02/14 01:17:15 by niel              #+#    #+#             */
+/*   Updated: 2025/02/14 01:19:48 by niel             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_ABS_H
-# define FT_ABS_H
+int	ft_strlen(char *str)
+{
+	int	n;
 
-# define ABS(Value) ((Value) < 0 ? -(Value) : (Value))
+	n = 0;
+	while (*str != '\0')
+	{
+		n++;
+		str++;
+	}
+	return (n);
+}
 
-#endif
+// int	main(void)
+// {
+// 	char	str[] = "dfsghjggfd";
+
+// 	ft_strlen(str);
+// 	return (ft_strlen(str));
+// }

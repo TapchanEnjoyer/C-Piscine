@@ -6,11 +6,11 @@
 /*   By: niel <niel@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/20 12:23:37 by niel              #+#    #+#             */
-/*   Updated: 2025/02/20 12:36:53 by niel             ###   ########.fr       */
+/*   Updated: 2025/02/24 01:45:58 by niel             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifdef FT_POINT_H
+#ifndef FT_POINT_H
 # define FT_POINT_H
 
 typedef struct s_point

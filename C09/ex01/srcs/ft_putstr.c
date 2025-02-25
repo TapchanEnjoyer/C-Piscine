@@ -1,18 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_abs.h                                           :+:      :+:    :+:   */
+/*   ft_putstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: niel <niel@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/20 12:21:42 by niel              #+#    #+#             */
-/*   Updated: 2025/02/24 01:42:26 by niel             ###   ########.fr       */
+/*   Created: 2025/02/14 01:20:32 by niel              #+#    #+#             */
+/*   Updated: 2025/02/14 01:28:44 by niel             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_ABS_H
-# define FT_ABS_H
+#include <unistd.h>
 
-# define ABS(Value) ((Value) < 0 ? -(Value) : (Value))
+void	ft_putstr(char *str)
+{
+	while (*str)
+	{
+		write(1, str, 1);
+		str++;
+	}
+}
 
-#endif
+// int	main(void)
+// {
+// 	char	str[] = "Cake is a lie";
+
+// 	ft_putstr(str);
+// 	return (0);
+// }
