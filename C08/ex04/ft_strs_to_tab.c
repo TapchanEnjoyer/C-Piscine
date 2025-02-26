@@ -6,7 +6,7 @@
 /*   By: niel <niel@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/20 12:30:08 by niel              #+#    #+#             */
-/*   Updated: 2025/02/24 01:50:03 by niel             ###   ########.fr       */
+/*   Updated: 2025/02/26 15:19:24 by niel             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,9 +45,9 @@ char	*ft_strcpy(char *dest, char *src)
 struct s_stock_str	*ft_strs_to_tab(int ac, char **av)
 {
 	struct s_stock_str	*s_s;
-	int	i;
+	int					i;
 
-	if (ac <=0)
+	if (ac <= 0)
 		return (NULL);
 	s_s = malloc(ac * sizeof(struct s_stock_str));
 	i = 0;

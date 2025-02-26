@@ -6,13 +6,19 @@
 /*   By: niel <niel@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/20 12:21:42 by niel              #+#    #+#             */
-/*   Updated: 2025/02/24 01:42:26 by niel             ###   ########.fr       */
+/*   Updated: 2025/02/26 15:27:32 by niel             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FT_ABS_H
 # define FT_ABS_H
 
-# define ABS(Value) ((Value) < 0 ? -(Value) : (Value))
+static inline int	ABS(int value)
+{
+	if (value < 0)
+		return (-value);
+	else
+		return (value);
+}
 
 #endif

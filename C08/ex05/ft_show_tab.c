@@ -6,7 +6,7 @@
 /*   By: niel <niel@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/24 01:27:26 by niel              #+#    #+#             */
-/*   Updated: 2025/02/24 01:47:35 by niel             ###   ########.fr       */
+/*   Updated: 2025/02/26 15:20:03 by niel             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,9 +23,9 @@ void	ft_putstr(char *str)
 	write(1, "\n", 1);
 }
 
-void ft_show_tab(struct s_stock_str *par)
+void	ft_show_tab(struct s_stock_str *par)
 {
-	int	i;
+	int		i;
 	char	c;
 
 	i = 0;
