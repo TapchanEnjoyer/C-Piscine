@@ -17,6 +17,9 @@ $(NAME): $(OBJECTS)
 	ar rc $(NAME) $(OBJECTS)
 	ranlib $(NAME)
 
+%.o: %.c $(HEADERS)
+	cc $(CFLAGS) -I $(CUR_DIR)/includes -c $< -o $@
+
 clean:
 	rm -f $(OBJECTS)
 

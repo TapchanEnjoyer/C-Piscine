@@ -6,7 +6,7 @@
 /*   By: niel <niel@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/20 12:30:08 by niel              #+#    #+#             */
-/*   Updated: 2025/02/26 15:19:24 by niel             ###   ########.fr       */
+/*   Updated: 2025/02/27 19:37:12 by niel             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,6 +53,8 @@ struct s_stock_str	*ft_strs_to_tab(int ac, char **av)
 	i = 0;
 	while (i < ac)
 	{
+		if (av[i] == NULL)
+			return (NULL);
 		s_s[i].size = ft_strlen(av[i]);
 		s_s[i].str = malloc((s_s[i].size + 1) * sizeof(char));
 		s_s[i].copy = malloc((s_s[i].size + 1) * sizeof(char));
