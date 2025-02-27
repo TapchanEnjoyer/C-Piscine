@@ -6,9 +6,11 @@
 /*   By: dprikhod <dprikhod@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/06 12:57:22 by dprikhod          #+#    #+#             */
-/*   Updated: 2025/02/06 14:49:47 by dprikhod         ###   ########.fr       */
+/*   Updated: 2025/02/06 18:38:15 by dprikhod         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include <unistd.h>
 
 void	ft_print_alphabet(void)
 {
@@ -22,9 +24,9 @@ void	ft_print_alphabet(void)
 	}
 }
 
-/*
-void	main(void)
+/*int	main(void)
 {
 	ft_print_alphabet();
+	return(0);
 }
 */
